@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Companies</title>
+</head>
+<body>
+    <h1>Companies</h1>
+    <ul>
+        {% for company in companies %}
+            <li>
+                {{ company.name }}{% if company.parent_company %} (Headquarter: {{ company.parent_company.name }}){% endif %}
+            </li>
+        {% empty %}
+            <li>No companies available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
